@@ -68,6 +68,10 @@ ENV PATH="${VIRTUAL_ENV}/bin:${PATH}"
 
 # Download nltk data
 RUN python -c "import nltk; nltk.download('punkt'); nltk.download('averaged_perceptron_tagger')"
+# Update package list and install dependencies
+# Add PyTorch installation in your Dockerfile
+#RUN pip install torch
+RUN pip install --no-cache-dir openai
 
 # Copy source code
 COPY . /app/api/
